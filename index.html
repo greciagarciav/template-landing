@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260909-01-9e65989","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script><script src="/_sdk/cc55fa1b533807c5.telemetry_sdk.js" integrity="sha512-vW7a0U63BNWyPgkdgvdYnLKXjx/E1nZSXBT1dQT4DrVBh7k4yi55jDX0CvlS9/4Dcuktj9yKi+hEm0rq9hBn1w=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dentomeri | Rehabilitación oral en San Isidro</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0B3C5D;
+      --aqua: #00A896;
+      --clinical: #F8FAFC;
+      --slate: #475569;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "DM Sans", sans-serif;
+      color: var(--navy);
+      background: var(--clinical);
+    }
+
+    .site-shell { width: 100%; overflow: hidden; }
+    .editorial { font-family: "Fraunces", serif; }
+    .top-strip { background: var(--navy); }
+    .main-nav {
+      background: rgba(248, 250, 252, .96);
+      border-bottom: 1px solid rgba(11, 60, 93, .14);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-link {
+      color: var(--slate);
+      font-size: .9rem;
+      font-weight: 700;
+      transition: color .2s ease;
+    }
+    .nav-link:hover { color: var(--aqua); }
+
+    .focusable:focus-visible,
+    .menu-toggle:focus-visible,
+    .nav-link:focus-visible {
+      outline: 3px solid var(--aqua);
+      outline-offset: 4px;
+    }
+
+    .aqua-rule { width: 58px; height: 4px; background: var(--aqua); }
+    .hero-surface {
+      background:
+        linear-gradient(115deg, #F8FAFC 0%, #F8FAFC 57%, rgba(0, 168, 150, .13) 57%, rgba(0, 168, 150, .13) 100%);
+    }
+
+    .photo-frame {
+      border: 1px solid rgba(0, 168, 150, .55);
+      box-shadow: 20px 20px 0 rgba(11, 60, 93, .08);
+    }
+
+    .action-button,
+    .outline-button {
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .action-button:hover,
+    .outline-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(11, 60, 93, .18);
+    }
+
+    .metric-border { border-color: rgba(11, 60, 93, .15); }
+
+    .service-card,
+    .testimonial-card,
+    .case-card,
+    .gallery-card {
+      transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
+    }
+
+    .service-card:hover,
+    .testimonial-card:hover,
+    .case-card:hover,
+    .gallery-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--aqua);
+      box-shadow: 0 18px 38px rgba(11, 60, 93, .13);
+    }
+
+    .map-surface {
+      background-color: #F8FAFC;
+      background-image:
+        linear-gradient(rgba(11, 60, 93, .09) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(11, 60, 93, .09) 1px, transparent 1px);
+      background-size: 26px 26px;
+    }
+
+    .map-surface::before {
+      content: "";
+      position: absolute;
+      width: 150%;
+      height: 17px;
+      left: -22%;
+      top: 48%;
+      background: rgba(0, 168, 150, .48);
+      transform: rotate(-17deg);
+    }
+
+    .map-surface::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 150%;
+      left: 58%;
+      top: -25%;
+      background: rgba(11, 60, 93, .14);
+      transform: rotate(22deg);
+    }
+
+    .reveal { animation: rise .7s ease both; }
+    .delay-1 { animation-delay: .1s; }
+    .delay-2 { animation-delay: .2s; }
+    .delay-3 { animation-delay: .3s; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .floating-whatsapp {
+      box-shadow: 0 14px 32px rgba(11, 60, 93, .28);
+      transition: transform .2s ease;
+    }
+    .floating-whatsapp:hover { transform: scale(1.06); }
+  </style>
+  <script src="/_sdk/d87b80b4433bab6b.data_sdk.js" type="text/javascript" integrity="sha512-JKynAZ3aIUkxrmu1y4Enod3283hZsIIaBhOwwM+go3QT3MqYMvKrAZczNoL1jjjyzi8i7cD2EiXs1sP4BPwZ3g=="></script>
+  <script src="/_sdk/ad00ce977a5c2ece.resizing_sdk.js" type="text/javascript" integrity="sha512-bog4wGkBPPOhR0ljLsI2R9w0aS7AHt6iC4MNxsBmTL7IysBG15pB3x/bOQf//NXwh2kdtoBZiW6QfBMagGYlWA=="></script>
+ </head>
+ <body data-template-id="__page-root" style="background: rgb(248, 250, 252);">
+  <div class="site-shell">
+   <header>
+    <div data-template-id="top-bar" class="canva-banner top-strip w-full" style="background: rgb(11, 60, 93); color: rgb(248, 250, 252);">
+     <div class="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-2.5 text-xs font-semibold sm:flex-row sm:items-center sm:justify-between lg:px-8">
+      <p data-template-id="top-location" class="canva-text" style="color: rgb(248, 250, 252); font-weight: 600; font-style: normal; font-size: 16px;">C. las Camelias 174, San Isidro 15046, Lima</p><a data-template-id="top-phone" class="canva-link focusable inline-flex w-fit items-center gap-2" href="https://wa.me/51995912470?text=Hola%20Dentomeri%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener noreferrer" style="color: rgb(248, 250, 252); font-weight: 600; font-style: normal; font-size: 16px;">WhatsApp: 995 912 470</a>
+     </div>
+    </div>
+    <nav class="main-nav sticky top-0 z-50 w-full" aria-label="Navegación principal">
+     <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8"><a class="focusable flex items-center gap-3" href="#nosotros" aria-label="Ir al inicio de Dentomeri"> <span class="flex h-10 w-10 items-center justify-center rounded-full bg-[#0B3C5D] text-[#00A896]"> <i data-lucide="sparkles" class="h-5 w-5"></i> </span> <span data-template-id="brand-name" class="canva-text editorial font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 23px;">Dentomeri</span> </a>
+      <div class="hidden items-center gap-7 lg:flex"><a data-template-id="nav-us" class="canva-link nav-link" href="#nosotros" style="color: rgb(71, 85, 105); font-weight: 700; font-style: normal; font-size: 16px;">Nosotros</a> <a data-template-id="nav-services" class="canva-link nav-link" href="#servicios" style="color: rgb(71, 85, 105); font-weight: 700; font-style: normal; font-size: 16px;">Servicios</a> <a data-template-id="nav-cases" class="canva-link nav-link" href="#casos" style="color: rgb(71, 85, 105); font-weight: 700; font-style: normal; font-size: 16px;">Casos</a> <a data-template-id="nav-contact" class="canva-link nav-link" href="#contacto" style="color: rgb(71, 85, 105); font-weight: 700; font-style: normal; font-size: 16px;">Contacto</a>
+      </div><a data-template-id="nav-cta" class="canva-button action-button focusable hidden items-center gap-2 rounded-full px-5 py-3 text-sm font-bold lg:inline-flex" href="https://wa.me/51995912470?text=Hola%20Dentomeri%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener noreferrer" style="background: rgb(0, 168, 150); color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Agendar cita</a> <button class="menu-toggle rounded-lg p-2 text-[#0B3C5D] lg:hidden" type="button" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu"> <i data-lucide="menu" class="h-6 w-6"></i> </button>
+     </div>
+     <div id="mobile-menu" class="hidden border-t border-[#0B3C5D]/10 bg-[#F8FAFC] px-5 py-5 lg:hidden">
+      <div class="flex flex-col gap-3"><a data-template-id="mobile-us" class="canva-link nav-link py-2" href="#nosotros" style="color: rgb(71, 85, 105); font-weight: 700; font-style: normal; font-size: 16px;">Nosotros</a> <a data-template-id="mobile-services" class="canva-link nav-link py-2" href="#servicios" style="color: rgb(71, 85, 105); font-weight: 700; font-style: normal; font-size: 16px;">Servicios</a> <a data-template-id="mobile-cases" class="canva-link nav-link py-2" href="#casos" style="color: rgb(71, 85, 105); font-weight: 700; font-style: normal; font-size: 16px;">Casos de éxito</a> <a data-template-id="mobile-contact" class="canva-link nav-link py-2" href="#contacto" style="color: rgb(71, 85, 105); font-weight: 700; font-style: normal; font-size: 16px;">Contacto</a> <a data-template-id="mobile-cta" class="canva-button action-button focusable mt-2 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-bold" href="https://wa.me/51995912470?text=Hola%20Dentomeri%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener noreferrer" style="background: rgb(0, 168, 150); color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Agendar por WhatsApp</a>
+      </div>
+     </div>
+    </nav>
+   </header>
+   <main>
+    <section id="nosotros" class="hero-surface w-full py-16 lg:py-24">
+     <div class="mx-auto grid max-w-7xl items-center gap-12 px-5 lg:grid-cols-[1.04fr_.96fr] lg:px-8">
+      <div>
+       <p data-template-id="hero-label" class="canva-tag reveal inline-flex items-center gap-2 rounded-full border border-[#00A896] px-4 py-2 text-sm font-bold uppercase tracking-[.12em]" style="background: rgb(248, 250, 252); color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 16px;">Rehabilitación oral especializada</p>
+       <h1 data-template-id="hero-title" class="canva-text editorial reveal delay-1 mt-6 max-w-3xl font-bold leading-[1.05]" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 32px;">Una sonrisa saludable se construye para durar.</h1>
+       <div class="aqua-rule reveal delay-1 mt-7"></div>
+       <p data-template-id="hero-copy" class="canva-text reveal delay-2 mt-6 max-w-2xl text-lg leading-8" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 18px; line-height: 1.7;">Dentomeri es una clínica dental en San Isidro dirigida por la Dra. Antonieta Pérez, especializada en rehabilitación oral, estética dental e implantes con planificación clínica personalizada.</p>
+       <div class="reveal delay-3 mt-9"><a data-template-id="hero-cta" class="canva-button action-button focusable inline-flex items-center gap-3 rounded-full px-7 py-4 font-bold" href="https://wa.me/51995912470?text=Hola%20Dentomeri%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener noreferrer" style="background: rgb(0, 168, 150); color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Reserva tu evaluación por WhatsApp</a>
+       </div>
+      </div>
+      <div class="relative mx-auto w-full max-w-xl">
+       <div class="photo-frame overflow-hidden bg-[#F8FAFC] p-3"><img data-template-id="hero-doctor-image" class="canva-image h-[400px] w-full object-cover sm:h-[510px]" loading="lazy" src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Profesional de salud sonriente con bata blanca en una clínica">
+       </div>
+       <div data-template-id="doctor-card" class="canva-card absolute -bottom-7 left-5 max-w-[285px] border-l-4 border-[#00A896] p-5 shadow-xl sm:left-9" style="background: rgb(248, 250, 252);">
+        <p data-template-id="doctor-name" class="canva-text editorial font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 20px;">Dra. Antonieta Pérez</p>
+        <p data-template-id="doctor-role" class="canva-text mt-1 text-sm" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Especialista en rehabilitación oral y estética dental</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section data-template-id="metrics-section" class="canva-section w-full py-14" style="background: rgb(248, 250, 252);">
+     <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-3">
+       <article class="border-b pb-8 md:border-b-0 md:border-r md:pb-0 md:pr-8 metric-border">
+        <p data-template-id="metric-one-value" class="canva-text editorial font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 38px;">+4,700</p>
+        <p data-template-id="metric-one-label" class="canva-text mt-2 leading-6" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Pacientes satisfechos respaldados por Google Reviews.</p>
+       </article>
+       <article class="border-b pb-8 md:border-b-0 md:border-r md:pb-0 md:px-8 metric-border">
+        <p data-template-id="metric-two-value" class="canva-text editorial font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 38px;">4.7 / 5</p>
+        <p data-template-id="metric-two-label" class="canva-text mt-2 leading-6" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Valoración de pacientes que recomiendan nuestra atención.</p>
+       </article>
+       <article class="md:pl-8">
+        <p data-template-id="metric-three-value" class="canva-text editorial font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 28px;">Alta complejidad</p>
+        <p data-template-id="metric-three-label" class="canva-text mt-2 leading-6" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Experiencia y especialización en tratamientos de rehabilitación oral.</p>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section id="servicios" data-template-id="services-section" class="canva-section w-full py-20 lg:py-28" style="background: rgb(11, 60, 93);">
+     <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="max-w-2xl">
+       <p data-template-id="services-label" class="canva-text text-sm font-bold uppercase tracking-[.18em]" style="color: rgb(0, 168, 150); font-weight: 700; font-style: normal; font-size: 16px;">Servicios especializados</p>
+       <h2 data-template-id="services-title" class="canva-text editorial mt-4 font-bold leading-tight" style="color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 24px;">Odontología de precisión para recuperar tu bienestar.</h2>
+       <p data-template-id="services-copy" class="canva-text mt-5 text-lg leading-8" style="color: rgb(248, 250, 252); font-weight: 400; font-style: normal; font-size: 18px;">Cada tratamiento parte de un diagnóstico detallado, objetivos claros y una visión clínica a largo plazo.</p>
+      </div>
+      <div class="mt-12 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+       <article data-template-id="service-one" class="canva-card service-card rounded-2xl border p-7" style="background: rgb(248, 250, 252);"><i data-lucide="smile-plus" class="h-9 w-9 text-[#00A896]"></i>
+        <h3 data-template-id="service-one-title" class="canva-text mt-7 font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 20px;">Rehabilitación Oral</h3>
+        <p data-template-id="service-one-copy" class="canva-text mt-3 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Recuperamos función, comodidad y armonía con planes integrales adaptados a ti.</p>
+       </article>
+       <article data-template-id="service-two" class="canva-card service-card rounded-2xl border p-7" style="background: rgb(248, 250, 252);"><i data-lucide="cross" class="h-9 w-9 text-[#00A896]"></i>
+        <h3 data-template-id="service-two-title" class="canva-text mt-7 font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 20px;">Implantes Dentales</h3>
+        <p data-template-id="service-two-copy" class="canva-text mt-3 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Alternativas estables y cuidadosamente planificadas para reemplazar piezas dentales.</p>
+       </article>
+       <article data-template-id="service-three" class="canva-card service-card rounded-2xl border p-7" style="background: rgb(248, 250, 252);"><i data-lucide="sparkles" class="h-9 w-9 text-[#00A896]"></i>
+        <h3 data-template-id="service-three-title" class="canva-text mt-7 font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 20px;">Estética Dental</h3>
+        <p data-template-id="service-three-copy" class="canva-text mt-3 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Mejoramos la naturalidad y proporción de tu sonrisa respetando tus rasgos.</p>
+       </article>
+       <article data-template-id="service-four" class="canva-card service-card rounded-2xl border p-7" style="background: rgb(248, 250, 252);"><i data-lucide="scan-face" class="h-9 w-9 text-[#00A896]"></i>
+        <h3 data-template-id="service-four-title" class="canva-text mt-7 font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 20px;">Odontología Restauradora</h3>
+        <p data-template-id="service-four-copy" class="canva-text mt-3 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Restauramos dientes comprometidos para devolver resistencia, salud y confort.</p>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section id="galeria" class="w-full bg-[#F8FAFC] py-20 lg:py-28">
+     <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="max-w-2xl">
+       <p data-template-id="gallery-label" class="canva-text text-sm font-bold uppercase tracking-[.18em]" style="color: rgb(0, 168, 150); font-weight: 700; font-style: normal; font-size: 16px;">Nuestro consultorio</p>
+       <h2 data-template-id="gallery-title" class="canva-text editorial mt-4 font-bold leading-tight" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 24px;">Tecnología, precisión y una atención que te hace sentir en confianza.</h2>
+       <p data-template-id="gallery-copy" class="canva-text mt-5 text-lg leading-8" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 18px;">Un espacio moderno y luminoso pensado para acompañarte con tranquilidad en cada etapa de tu tratamiento.</p>
+      </div>
+      <div class="mt-12 grid gap-5 lg:grid-cols-2">
+       <article data-template-id="gallery-main-card" class="canva-card gallery-card overflow-hidden rounded-2xl border" style="background: rgb(248, 250, 252);"><img data-template-id="clinic-image" class="canva-image h-[330px] w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/6809645/pexels-photo-6809645.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" alt="Clean and modern dental clinic reception area with minimalist design and stylish lighting.">
+        <div class="p-6">
+         <h3 data-template-id="clinic-image-title" class="canva-text font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 20px;">Instalaciones modernas</h3>
+         <p data-template-id="clinic-image-copy" class="canva-text mt-2 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Ambientes clínicos cuidados para brindarte una experiencia cómoda y profesional.</p>
+        </div>
+       </article>
+       <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
+        <article data-template-id="gallery-digital-card" class="canva-card gallery-card overflow-hidden rounded-2xl border sm:grid sm:grid-cols-[.9fr_1.1fr] lg:grid-cols-[.9fr_1.1fr]" style="background: rgb(248, 250, 252);"><img data-template-id="digital-image" class="canva-image h-56 w-full object-cover sm:h-full" loading="lazy" src="https://images.pexels.com/photos/6812463/pexels-photo-6812463.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A bright, modern dental office displaying various dental tools and equipment.">
+         <div class="p-6">
+          <h3 data-template-id="digital-image-title" class="canva-text font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 19px;">Diagnóstico digital</h3>
+          <p data-template-id="digital-image-copy" class="canva-text mt-2 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Herramientas de diagnóstico para planificar cada decisión con mayor precisión.</p>
+         </div>
+        </article>
+        <article data-template-id="gallery-working-card" class="canva-card gallery-card overflow-hidden rounded-2xl border sm:grid sm:grid-cols-[.9fr_1.1fr] lg:grid-cols-[.9fr_1.1fr]" style="background: rgb(248, 250, 252);"><img data-template-id="working-image" class="canva-image h-56 w-full object-cover sm:h-full" loading="lazy" src="https://images.pexels.com/photos/3845653/pexels-photo-3845653.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="A female dentist checks a patient's teeth during a dental appointment.">
+         <div class="p-6">
+          <h3 data-template-id="working-image-title" class="canva-text font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 19px;">Atención personalizada</h3>
+          <p data-template-id="working-image-copy" class="canva-text mt-2 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Cada consulta se basa en escuchar tus necesidades y explicar cada alternativa.</p>
+         </div>
+        </article>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="casos" data-template-id="cases-section" class="canva-section w-full py-20 lg:py-28" style="background: rgb(248, 250, 252);">
+     <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="max-w-2xl">
+       <p data-template-id="cases-label" class="canva-text text-sm font-bold uppercase tracking-[.18em]" style="color: rgb(0, 168, 150); font-weight: 700; font-style: normal; font-size: 16px;">Antes y después</p>
+       <h2 data-template-id="cases-title" class="canva-text editorial mt-4 font-bold leading-tight" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 24px;">Transformaciones que devuelven función y confianza.</h2>
+       <p data-template-id="cases-copy" class="canva-text mt-5 text-lg leading-8" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 18px;">Cada caso se planifica según la salud oral, funcionalidad y objetivos estéticos de cada paciente.</p>
+      </div>
+      <div class="mt-12 grid gap-7 lg:grid-cols-2">
+       <article data-template-id="case-one" class="canva-card case-card overflow-hidden rounded-2xl border" style="background: rgb(248, 250, 252);">
+        <div class="grid sm:grid-cols-2">
+         <div class="relative"><img data-template-id="case-one-before-image" class="canva-image h-64 w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/6627570/pexels-photo-6627570.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Dental shade guide being used to match tooth color during a hygiene procedure."> <span data-template-id="case-one-before-label" class="canva-tag absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold" style="background: rgb(11, 60, 93); color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Antes</span>
+         </div>
+         <div class="relative"><img data-template-id="case-one-after-image" class="canva-image h-64 w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/3762453/pexels-photo-3762453.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Vivid close-up image of a woman's smile showcasing red lipstick and white teeth on a light background."> <span data-template-id="case-one-after-label" class="canva-tag absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold" style="background: rgb(0, 168, 150); color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Después</span>
+         </div>
+        </div>
+        <div class="p-6">
+         <h3 data-template-id="case-one-title" class="canva-text font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 20px;">Armonía y estética dental</h3>
+         <p data-template-id="case-one-copy" class="canva-text mt-2 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Planificación estética enfocada en un resultado natural, funcional y acorde a cada sonrisa.</p>
+        </div>
+       </article>
+       <article data-template-id="case-two" class="canva-card case-card overflow-hidden rounded-2xl border" style="background: rgb(248, 250, 252);">
+        <div class="grid sm:grid-cols-2">
+         <div class="relative"><img data-template-id="case-two-before-image" class="canva-image h-64 w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/14235198/pexels-photo-14235198.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="Close-up portrait of a woman receiving a dental checkup in a clinic setting."> <span data-template-id="case-two-before-label" class="canva-tag absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold" style="background: rgb(11, 60, 93); color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Antes</span>
+         </div>
+         <div class="relative"><img data-template-id="case-two-after-image" class="canva-image h-64 w-full object-cover" loading="lazy" src="https://images.pexels.com/photos/3845627/pexels-photo-3845627.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="African American woman smiling while sitting in a dental clinic chair during a check-up."> <span data-template-id="case-two-after-label" class="canva-tag absolute left-4 top-4 rounded-full px-3 py-1 text-xs font-bold" style="background: rgb(0, 168, 150); color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Después</span>
+         </div>
+        </div>
+        <div class="p-6">
+         <h3 data-template-id="case-two-title" class="canva-text font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 20px;">Recuperación funcional</h3>
+         <p data-template-id="case-two-copy" class="canva-text mt-2 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">Tratamientos integrales que buscan devolver comodidad, seguridad y salud oral.</p>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section id="testimonios" class="w-full bg-[#F8FAFC] py-20 lg:py-28">
+     <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="max-w-2xl">
+       <p data-template-id="testimonials-label" class="canva-text text-sm font-bold uppercase tracking-[.18em]" style="color: rgb(0, 168, 150); font-weight: 700; font-style: normal; font-size: 16px;">Recomendaciones</p>
+       <h2 data-template-id="testimonials-title" class="canva-text editorial mt-4 font-bold leading-tight" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 24px;">La confianza de nuestros pacientes es nuestra mejor recomendación.</h2>
+      </div>
+      <div class="mt-12 grid gap-5 lg:grid-cols-3">
+       <article data-template-id="testimonial-one" class="canva-card testimonial-card rounded-2xl border p-7" style="background: rgb(248, 250, 252);">
+        <div class="flex gap-1 text-[#00A896]" aria-label="Cinco estrellas"><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+        </div>
+        <p data-template-id="testimonial-one-copy" class="canva-text mt-5 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">“La Dra. Antonieta explica todo con mucha claridad. Me sentí acompañado durante cada etapa del tratamiento.”</p>
+        <p data-template-id="testimonial-one-name" class="canva-text mt-6 font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 16px;">Paciente de Google Reviews</p>
+       </article>
+       <article data-template-id="testimonial-two" class="canva-card testimonial-card rounded-2xl border p-7" style="background: rgb(248, 250, 252);">
+        <div class="flex gap-1 text-[#00A896]" aria-label="Cinco estrellas"><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+        </div>
+        <p data-template-id="testimonial-two-copy" class="canva-text mt-5 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">“Encontré una atención muy profesional, amable y cuidadosa. El resultado superó mis expectativas.”</p>
+        <p data-template-id="testimonial-two-name" class="canva-text mt-6 font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 16px;">Paciente de Google Reviews</p>
+       </article>
+       <article data-template-id="testimonial-three" class="canva-card testimonial-card rounded-2xl border p-7" style="background: rgb(248, 250, 252);">
+        <div class="flex gap-1 text-[#00A896]" aria-label="Cinco estrellas"><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i><i data-lucide="star" class="h-4 w-4 fill-current"></i>
+        </div>
+        <p data-template-id="testimonial-three-copy" class="canva-text mt-5 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">“El diagnóstico fue muy completo y el plan de tratamiento me dio mucha seguridad desde la primera cita.”</p>
+        <p data-template-id="testimonial-three-name" class="canva-text mt-6 font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 16px;">Paciente de Google Reviews</p>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section id="reservar" class="w-full py-20 lg:py-28">
+     <div data-template-id="promotion-section" class="canva-banner mx-auto max-w-7xl overflow-hidden rounded-3xl px-6 py-12 sm:px-10 lg:px-14 lg:py-16" style="background: rgb(11, 60, 93);">
+      <div class="grid gap-10 lg:grid-cols-[1fr_.78fr] lg:items-center">
+       <div>
+        <p data-template-id="promotion-label" class="canva-text text-sm font-bold uppercase tracking-[.18em]" style="color: rgb(0, 168, 150); font-weight: 700; font-style: normal; font-size: 16px;">Primera visita</p>
+        <h2 data-template-id="promotion-title" class="canva-text editorial mt-4 max-w-2xl font-bold leading-tight" style="color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 24px;">Empieza con una evaluación diagnóstica personalizada.</h2>
+        <p data-template-id="promotion-copy" class="canva-text mt-5 max-w-xl text-lg leading-8" style="color: rgb(248, 250, 252); font-weight: 400; font-style: normal; font-size: 18px;">Conversemos sobre tus objetivos y construyamos un plan claro para recuperar la salud, función y estética de tu sonrisa.</p>
+       </div>
+       <div class="flex flex-col gap-3 lg:items-end"><a data-template-id="promotion-whatsapp" class="canva-button action-button focusable inline-flex w-full items-center justify-center gap-3 rounded-full px-6 py-4 font-bold lg:w-auto" href="https://wa.me/51995912470?text=Hola%20Dentomeri%2C%20quisiera%20reservar%20mi%20evaluaci%C3%B3n%20diagn%C3%B3stica." target="_blank" rel="noopener noreferrer" style="background: rgb(0, 168, 150); color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Reservar por WhatsApp</a>
+        <p data-template-id="promotion-note" class="canva-text text-center text-sm lg:text-right" style="color: rgb(248, 250, 252); font-weight: 400; font-style: normal; font-size: 16px;">Respuesta rápida para coordinar tu cita.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="horario" data-template-id="hours-section" class="canva-section w-full py-20 lg:py-24" style="background: rgb(248, 250, 252);">
+     <div class="mx-auto grid max-w-7xl gap-10 px-5 lg:grid-cols-[.85fr_1.15fr] lg:px-8">
+      <div>
+       <p data-template-id="hours-label" class="canva-text text-sm font-bold uppercase tracking-[.18em]" style="color: rgb(0, 168, 150); font-weight: 700; font-style: normal; font-size: 16px;">Horario de atención</p>
+       <h2 data-template-id="hours-title" class="canva-text editorial mt-4 font-bold leading-tight" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 24px;">Encuentra el momento ideal para cuidar tu sonrisa.</h2>
+       <p data-template-id="hours-copy" class="canva-text mt-5 max-w-lg text-lg leading-8" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 18px;">Te recomendamos reservar previamente para brindarte una atención puntual y personalizada.</p>
+      </div>
+      <div data-template-id="hours-card" class="canva-card rounded-2xl p-7 sm:p-9" style="background: rgb(11, 60, 93); color: rgb(248, 250, 252);">
+       <div class="flex items-center justify-between border-b border-[#F8FAFC]/30 py-4">
+        <p data-template-id="hours-weekdays-label" class="canva-text font-bold" style="color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Lunes a viernes</p>
+        <p data-template-id="hours-weekdays-value" class="canva-text" style="color: rgb(248, 250, 252); font-weight: 400; font-style: normal; font-size: 16px;">9:00 a. m. – 7:00 p. m.</p>
+       </div>
+       <div class="flex items-center justify-between border-b border-[#F8FAFC]/30 py-4">
+        <p data-template-id="hours-saturday-label" class="canva-text font-bold" style="color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Sábados</p>
+        <p data-template-id="hours-saturday-value" class="canva-text" style="color: rgb(248, 250, 252); font-weight: 400; font-style: normal; font-size: 16px;">9:00 a. m. – 2:00 p. m.</p>
+       </div>
+       <div class="flex items-center justify-between py-4">
+        <p data-template-id="hours-sunday-label" class="canva-text font-bold" style="color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Domingos</p>
+        <p data-template-id="hours-sunday-value" class="canva-text" style="color: rgb(248, 250, 252); font-weight: 400; font-style: normal; font-size: 16px;">Cerrado</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="contacto" class="w-full bg-[#F8FAFC] py-20 lg:py-28">
+     <div class="mx-auto max-w-7xl px-5 lg:px-8">
+      <div class="max-w-2xl">
+       <p data-template-id="contact-label" class="canva-text text-sm font-bold uppercase tracking-[.18em]" style="color: rgb(0, 168, 150); font-weight: 700; font-style: normal; font-size: 16px;">Contacto y ubicación</p>
+       <h2 data-template-id="contact-title" class="canva-text editorial mt-4 font-bold leading-tight" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 24px;">Estamos en el corazón de San Isidro.</h2>
+      </div>
+      <div class="mt-12 grid gap-7 lg:grid-cols-[.9fr_1.1fr]">
+       <aside data-template-id="contact-card" class="canva-panel rounded-2xl p-7 sm:p-9" style="background: rgb(248, 250, 252);">
+        <div class="flex gap-4"><i data-lucide="map-pin" class="mt-1 h-5 w-5 shrink-0 text-[#00A896]"></i>
+         <div>
+          <h3 data-template-id="address-title" class="canva-text font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 19px;">Visítanos</h3>
+          <p data-template-id="address-copy" class="canva-text mt-2 leading-7" style="color: rgb(71, 85, 105); font-weight: 400; font-style: normal; font-size: 16px;">C. las Camelias 174, San Isidro 15046, Lima.</p>
+         </div>
+        </div>
+        <div class="mt-7 flex gap-4"><i data-lucide="phone" class="mt-1 h-5 w-5 shrink-0 text-[#00A896]"></i>
+         <div>
+          <h3 data-template-id="phone-title" class="canva-text font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 19px;">Llámanos o escríbenos</h3><a data-template-id="phone-link" class="canva-link focusable mt-2 inline-block font-bold" href="https://wa.me/51995912470?text=Hola%20Dentomeri%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener noreferrer" style="color: rgb(0, 168, 150); font-weight: 700; font-style: normal; font-size: 18px;">995 912 470</a>
+         </div>
+        </div>
+        <div class="mt-8 border-t border-[#0B3C5D]/15 pt-7">
+         <h3 data-template-id="social-title" class="canva-text font-bold" style="color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 19px;">Síguenos en redes sociales</h3>
+         <div class="mt-4 flex gap-3"><a data-template-id="instagram-link" class="canva-button outline-button focusable inline-flex items-center gap-2 rounded-full border px-4 py-3 text-sm font-bold" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" style="background: rgb(248, 250, 252); color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 16px;">Instagram</a> <a data-template-id="facebook-link" class="canva-button outline-button focusable inline-flex items-center gap-2 rounded-full border px-4 py-3 text-sm font-bold" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" style="background: rgb(248, 250, 252); color: rgb(11, 60, 93); font-weight: 700; font-style: normal; font-size: 16px;">Facebook</a>
+         </div>
+        </div>
+       </aside><a class="map-surface focusable relative flex min-h-[350px] items-center justify-center overflow-hidden rounded-2xl border border-[#00A896]" href="https://www.google.com/maps/search/?api=1&amp;query=C.+las+Camelias+174%2C+San+Isidro+15046%2C+Lima" target="_blank" rel="noopener noreferrer" aria-label="Abrir ubicación de Dentomeri en Google Maps"> <span data-template-id="map-button" class="canva-button relative z-10 inline-flex items-center gap-2 rounded-full px-5 py-4 font-bold" style="background: rgb(11, 60, 93); color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">Ver ubicación en Google Maps</span> </a>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer data-template-id="footer-section" class="canva-footer w-full" style="background: rgb(11, 60, 93); color: rgb(248, 250, 252);">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 sm:flex-row sm:items-center sm:justify-between lg:px-8">
+     <p data-template-id="footer-brand" class="canva-text editorial font-bold" style="color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 22px;">Dentomeri</p>
+     <p data-template-id="footer-copyright" class="canva-text text-sm" style="color: rgb(248, 250, 252); font-weight: 400; font-style: normal; font-size: 16px;">© 2026 Dentomeri · Rehabilitación oral en San Isidro, Lima.</p>
+    </div>
+   </footer><a data-template-id="floating-whatsapp" class="canva-button floating-whatsapp focusable fixed bottom-6 right-6 z-50 inline-flex items-center gap-3 rounded-full px-5 py-4 font-bold" href="https://wa.me/51995912470?text=Hola%20Dentomeri%2C%20quisiera%20agendar%20una%20consulta." target="_blank" rel="noopener noreferrer" style="background: rgb(0, 168, 150); color: rgb(248, 250, 252); font-weight: 700; font-style: normal; font-size: 16px;">WhatsApp</a>
+  </div>
+  <script src="/_sdk/8b7c4717bafbcf62.editing_sdk.js" integrity="sha512-/t3Rjm/TVHx0TUFevsNeqgNF0PQm8F5l+hyiCjrHCLbsauhvNMY9XpbPM3BPm27R9/KnzXCuMA6HMwrgyWM8WQ=="></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons();
+
+      const toggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      toggle.addEventListener("click", function () {
+        const opening = mobileMenu.classList.contains("hidden");
+        mobileMenu.classList.toggle("hidden");
+        toggle.setAttribute("aria-expanded", String(opening));
+      });
+
+      mobileMenu.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          mobileMenu.classList.add("hidden");
+          toggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  </script>
+ 
+</body></html>
