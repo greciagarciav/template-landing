@@ -43,6 +43,36 @@ h1,h2,h3,h4,button,a { font-family: "Montserrat", sans-serif; }
 .case-panel { display: none; }
 .case-panel.active { display: grid; animation: rise .35s ease both; }
 .filter-btn.active { background: var(--teal); color: white; border-color: var(--teal); }
+.specialty-carousel-shell { position: relative; display: flex; align-items: center; gap: .9rem; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%); }
+.specialty-carousel { display: flex; width: max-content; gap: 0; white-space: nowrap; overflow: visible; scroll-snap-type: x proximity; scrollbar-width: none; -ms-overflow-style: none; padding: .2rem .2rem 1rem; min-width: 0; will-change: transform; transform: translate3d(0, 0, 0); }
+.specialty-carousel-group { display: flex; flex-shrink: 0; gap: 0; }
+.specialty-carousel:hover { cursor: default; }
+.specialty-carousel::-webkit-scrollbar { display: none; }
+.specialty-carousel-shell .specialty-carousel-arrow { display: none !important; }
+.specialty-card { position: relative; flex: 0 0 auto; width: 360px; height: 545px; border: 0; padding: 0; overflow: hidden; scroll-snap-align: start; cursor: pointer; background: #000; box-shadow: 0 22px 44px rgba(8,46,43,.12); transition: transform .2s ease, box-shadow .2s ease; }
+.specialty-card:hover, .specialty-card:focus-visible { transform: translateY(-4px); box-shadow: 0 30px 50px rgba(8,46,43,.18); }
+.specialty-card img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.08); }
+.specialty-card::before { content: ""; position: absolute; inset: 0; background: rgba(0, 179, 166, 0.18); transition: background .2s ease; }
+.specialty-card:hover::before, .specialty-card:focus-visible::before { background: rgba(0, 179, 166, 0.56); }
+.specialty-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 1.25rem; background: rgba(0, 179, 166, 0.5); z-index: 1; opacity: 0; transition: opacity .2s ease; }
+.specialty-card:hover .specialty-overlay, .specialty-card:focus-visible .specialty-overlay { opacity: 1; }
+.specialty-overlay span { display: inline-block; color: white; font-size: 24px; font-weight: 800; letter-spacing: -0.06em; line-height: 1; text-align: center; text-transform: none; text-shadow: 0 4px 18px rgba(0,0,0,.18); }
+.specialty-carousel-arrow { display: inline-flex; align-items: center; justify-content: center; width: 2.9rem; height: 2.9rem; border: 1px solid rgba(8,46,43,.14); border-radius: 999px; background: rgba(255,255,255,.9); color: var(--deep); font-size: 2rem; line-height: 1; box-shadow: 0 10px 22px rgba(8,46,43,.08); cursor: pointer; }
+.specialty-carousel-arrow:hover { background: white; }
+.specialty-modal-card { max-width: 860px; }
+.specialty-detail { display: grid; grid-template-columns: 300px 1fr; gap: 1.5rem; align-items: center; }
+.specialty-detail-image { width: 100%; height: 340px; object-fit: cover; border-radius: 24px; background: #f2f5f5; }
+.specialty-detail-content { padding-right: 3.25rem; }
+.specialty-detail-content h3 { margin: .4rem 0 .7rem; font-size: 36px; line-height: 1; letter-spacing: -0.06em; }
+.specialty-detail-content p { margin: 0 0 1rem; color: rgba(17, 24, 24, 0.78); line-height: 1.7; }
+.specialty-benefits { margin: 1rem 0 1.2rem; padding-left: 1.4rem; list-style: disc; color: rgba(17, 24, 24, 0.8); }
+.specialty-benefits li { margin-bottom: .5rem; list-style: disc; }
+.specialty-benefits li::marker { color: var(--teal); }
+.specialty-cta-row { display: flex; flex-wrap: wrap; gap: .8rem; }
+.specialty-cta-row a, .specialty-cta-row button { border: 0; border-radius: 999px; padding: .9rem 1.2rem; font-weight: 700; cursor: pointer; }
+.specialty-cta-row a { display: inline-flex; align-items: center; justify-content: center; text-decoration: none; background: var(--teal); color: white; }
+.specialty-cta-row button { background: rgba(0,179,166,.12); color: var(--deep); }
+@media (max-width: 760px) { .specialty-detail { grid-template-columns: 1fr; } .specialty-detail-image { height: 240px; } .specialty-card { flex-basis: 280px; height: 360px; } }
 .faq-answer { display: none; }
 .faq-item.open .faq-answer { display: block; }
 .faq-item.open .faq-chevron { transform: rotate(180deg); }

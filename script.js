@@ -48,6 +48,228 @@ document.querySelectorAll('.filter-btn').forEach(function(button) {
   });
 });
 
+var specialityCarousel = document.getElementById('specialty-carousel');
+if (specialityCarousel) {
+  var specialityCards = Array.from(specialityCarousel.children);
+  var firstGroup = document.createElement('div');
+  firstGroup.className = 'specialty-carousel-group';
+
+  specialityCards.forEach(function(card) {
+    firstGroup.appendChild(card);
+  });
+
+  var secondGroup = document.createElement('div');
+  secondGroup.className = 'specialty-carousel-group';
+  specialityCards.forEach(function(card) {
+    var clone = card.cloneNode(true);
+    clone.setAttribute('aria-hidden', 'true');
+    secondGroup.appendChild(clone);
+  });
+
+  specialityCarousel.innerHTML = '';
+  specialityCarousel.appendChild(firstGroup);
+  specialityCarousel.appendChild(secondGroup);
+
+  var specialityOffset = 0;
+  var specialitySpeed = 0.8;
+  var specialityStep = firstGroup.offsetWidth || 0;
+  var specialityLoopId = null;
+
+  function tickSpecialityCarousel() {
+    if (!specialityCarousel || !firstGroup) return;
+
+    specialityStep = firstGroup.offsetWidth || 0;
+    specialityOffset += specialitySpeed;
+
+    if (specialityOffset >= specialityStep) {
+      specialityOffset = 0;
+      specialityCarousel.style.transform = 'translate3d(0, 0, 0)';
+      return;
+    }
+
+    specialityCarousel.style.transform = 'translate3d(-' + specialityOffset + 'px, 0, 0)';
+  }
+
+  specialityLoopId = setInterval(tickSpecialityCarousel, 16);
+
+  specialityCarousel.addEventListener('mouseenter', function() {
+    if (specialityLoopId) clearInterval(specialityLoopId);
+  });
+
+  specialityCarousel.addEventListener('mouseleave', function() {
+    if (specialityLoopId) clearInterval(specialityLoopId);
+    specialityLoopId = setInterval(tickSpecialityCarousel, 16);
+  });
+
+  window.addEventListener('resize', function() {
+    specialityStep = firstGroup.offsetWidth || 0;
+    if (specialityStep > 0 && specialityOffset >= specialityStep) {
+      specialityOffset = 0;
+    }
+  });
+}
+
+var specialityModal = document.getElementById('specialty-modal');
+var specialityModalBody = document.getElementById('specialty-modal-body');
+var specialityModalClose = document.getElementById('specialty-modal-close');
+
+var specialityBenefits = {
+  'Rehabilitación oral': [
+    'Recupera sonrisa y funcionalidad',
+    'Mejora la estética de una forma armoniosa',
+    'Personaliza el tratamiento a cada caso'
+  ],
+  'Estética dental': [
+    'Mejora la armonía visual de la sonrisa',
+    'Aumenta la confianza al sonreír',
+    'Ofrece resultados naturales y personalizados'
+  ],
+  'Implantes dentales': [
+    'Restauran la función masticatoria',
+    'Mantienen la estética y la sonrisa',
+    'Ayudan a preservar el hueso y el contorno facial'
+  ],
+  'Periodoncia': [
+    'Cuida la base de tus dientes',
+    'Previene pérdida dental',
+    'Mantiene la salud general oral'
+  ],
+  'Endodoncia': [
+    'Alivia dolor e infección',
+    'Conserva el diente natural',
+    'Recupera función y confort'
+  ],
+  'Ortodoncia': [
+    'Mejora la alineación y la mordida',
+    'Fortalece la estética y función',
+    'Favorece una mejor higiene oral'
+  ],
+  'Odontopediatría': [
+    'Prevención temprana para evitar problemas futuros',
+    'Atención amable y comprensiva para niños',
+    'Hábitos saludables desde la infancia'
+  ],
+  'Cirugía oral': [
+    'Resuelve condiciones complejas',
+    'Reduce dolor y molestias',
+    'Mejora la salud oral y la calidad de vida'
+  ]
+};
+
+function getSpecialityBenefits(specialty) {
+  return specialityBenefits[specialty] || [];
+}
+
+function getSpecialityCopy(specialty, fallbackItem) {
+  var copyMap = {
+    'Rehabilitación oral': {
+      summary: 'Recuperamos dientes dañados, ausentes o desgastados para devolverles función, estética y armonía.',
+      description: '<strong>Ideal para:</strong> coronas, puentes, incrustaciones, prótesis y rehabilitaciones integrales.'
+    },
+    'Estética dental': {
+      summary: 'Mejoramos la apariencia de tu sonrisa respetando la naturalidad y las características de cada paciente.',
+      description: '<strong>Ideal para:</strong> restauraciones estéticas, carillas, blanqueamiento y diseño de sonrisa.'
+    },
+    'Implantes dentales': {
+      summary: 'Reemplazamos dientes ausentes mediante implantes dentales, buscando recuperar la función y la seguridad al sonreír y comer.',
+      description: ''
+    },
+    'Periodoncia': {
+      summary: 'Cuidamos las encías y los tejidos que sostienen tus dientes para prevenir y tratar problemas como gingivitis y periodontitis.',
+      description: ''
+    },
+    'Endodoncia': {
+      summary: 'Tratamos el interior del diente cuando la pulpa está afectada, buscando conservar el diente y evitar su extracción cuando es posible.',
+      description: ''
+    },
+    'Ortodoncia': {
+      summary: 'Corregimos la posición de los dientes y la mordida para conseguir una sonrisa más alineada y una función adecuada.',
+      description: ''
+    },
+    'Odontopediatría': {
+      summary: 'Cuidamos la salud dental de los niños desde sus primeros años, creando experiencias positivas y ayudándolos a desarrollar buenos hábitos.',
+      description: ''
+    },
+    'Cirugía oral': {
+      summary: 'Realizamos procedimientos quirúrgicos necesarios para resolver diferentes problemas de salud bucal, siempre con una evaluación previa y un manejo cuidadoso del paciente.',
+      description: ''
+    }
+  };
+
+  return copyMap[specialty] || {
+    summary: fallbackItem && fallbackItem.summary ? fallbackItem.summary : '',
+    description: fallbackItem && fallbackItem.description ? fallbackItem.description : ''
+  };
+}
+
+function openSpecialityModal(item) {
+  if (!specialityModal || !specialityModalBody || !item) return;
+
+  var benefits = getSpecialityBenefits(item.specialty || '');
+  var benefitsList = benefits.map(function(benefit) {
+    return '<li>' + benefit + '</li>';
+  }).join('');
+  var specialtyCopy = getSpecialityCopy(item.specialty || '', item);
+  var summaryText = specialtyCopy.summary || item.summary || '';
+  var descriptionText = specialtyCopy.description || item.description || '';
+  var benefitsLabel = benefits.length ? '<p class="specialty-benefits-title"><strong>Beneficios:</strong></p>' : '';
+
+  specialityModalBody.innerHTML = `
+    <div class="specialty-detail">
+      <img class="specialty-detail-image" src="${item.image || ''}" alt="${item.specialty || 'Especialidad'}" loading="lazy">
+      <div class="specialty-detail-content">
+        <h3 id="specialty-modal-title">${item.specialty || 'Especialidad'}</h3>
+        <p>${summaryText}</p>
+        ${descriptionText ? '<p>' + descriptionText + '</p>' : ''}
+        ${benefitsLabel}
+        <ul class="specialty-benefits">${benefitsList}</ul>
+        <div class="specialty-cta-row">
+          <a href="https://wa.me/51969744485?text=${encodeURIComponent('Hola Dentomeri, me gustaría más información sobre la especialidad de ' + (item.specialty || ''))}" target="_blank" rel="noopener noreferrer">Conoce más</a>
+        </div>
+      </div>
+    </div>
+  `;
+
+  specialityModal.classList.add('open');
+  specialityModal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeSpecialityModal() {
+  if (!specialityModal) return;
+  specialityModal.classList.remove('open');
+  specialityModal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('.specialty-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    var item = {
+      specialty: card.dataset.specialty,
+      image: card.dataset.image,
+      summary: '',
+      description: ''
+    };
+    openSpecialityModal(item);
+  });
+});
+
+if (specialityModalClose) {
+  specialityModalClose.addEventListener('click', closeSpecialityModal);
+}
+
+if (specialityModal) {
+  specialityModal.addEventListener('click', function(event) {
+    if (event.target === specialityModal) closeSpecialityModal();
+  });
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Escape' && specialityModal && specialityModal.classList.contains('open')) {
+    closeSpecialityModal();
+  }
+});
+
 var clinicVideoPlayButton = document.querySelector('[data-template-id="clinic-video-play-button"]');
 var clinicVideoStatus = document.querySelector('[data-template-id="clinic-video-status"]');
 var clinicVideoReadyStatus = document.querySelector('[data-template-id="clinic-video-ready-status"]');
