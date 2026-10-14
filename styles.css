@@ -110,7 +110,8 @@ h1,h2,h3,h4,button,a { font-family: "Montserrat", sans-serif; }
 .booking-choice small, .booking-date small { display: block; margin-top: .2rem; color: #66716f; font-size: .75rem; }
 .booking-choice.selected, .booking-date.selected, .booking-time.selected { border-color: #00A69F; background: #effafa; box-shadow: 0 0 0 1px #00A69F; }
 .booking-choice.selected::after { content: '✓'; float: right; margin-top: -.9rem; color: #fff; background: #00A69F; border-radius: 50%; padding: .1rem .35rem; }
-.booking-dates, .booking-times { display: grid; grid-template-columns: repeat(3, 1fr); gap: .55rem; }
+.booking-dates { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .55rem; }
+.booking-times { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .55rem; }
 .booking-time { text-align: center; margin: 0; padding: .7rem .4rem; font-size: .78rem; }
 .booking-note { margin: 0 0 1rem; color: #66716f; font-size: .72rem; }
 .booking-field { display: block; margin: .8rem 0; font-size: .78rem; font-weight: 700; }
@@ -130,7 +131,7 @@ h1,h2,h3,h4,button,a { font-family: "Montserrat", sans-serif; }
 .privacy-close:hover { background: #fff; }
 .privacy-title { margin: 1.35rem 0 1.2rem; font-size: clamp(2.1rem, 3vw, 4rem); line-height: 0.96; letter-spacing: -0.06em; color: #0d1414; font-weight: 800; max-width: 560px; }
 .privacy-copy { margin: 0; max-width: 660px; font-size: clamp(1rem, 1.5vw, 1.15rem); line-height: 1.6; color: rgba(17, 24, 24, 0.82); }
-@media (max-width: 560px) { .booking-modal { padding: 0; align-items: flex-end; } .booking-dialog { width: 100%; max-height: 94%; border-radius: 24px 24px 0 0; } .booking-dates, .booking-times { gap: .4rem; } .privacy-card { border-radius: 26px; padding: 1.2rem 1.1rem 1.5rem; } .privacy-chip { font-size: .72rem; } .privacy-close { width: 2.4rem; height: 2.4rem; top: 1rem; right: 1rem; } .privacy-title { margin-top: 1rem; } }
+@media (max-width: 560px) { .booking-modal { padding: 0; align-items: flex-end; } .booking-dialog { width: 100%; max-height: 94%; border-radius: 24px 24px 0 0; } .booking-dates, .booking-times { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; } .privacy-card { border-radius: 26px; padding: 1.2rem 1.1rem 1.5rem; } .privacy-chip { font-size: .72rem; } .privacy-close { width: 2.4rem; height: 2.4rem; top: 1rem; right: 1rem; } .privacy-title { margin-top: 1rem; } }
 @media (max-width: 768px) { [data-template-id="final-cta"] { border-radius: 0 !important; } }
 .whatsapp-float { gap: .65rem; padding: .35rem .4rem .35rem 1.15rem; background: #005B55; border: 1px solid rgba(174,229,224,.42); transition: transform .2s ease, box-shadow .2s ease; }
 .whatsapp-float:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(0,91,85,.24); }

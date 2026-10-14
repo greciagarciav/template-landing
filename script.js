@@ -366,6 +366,64 @@ function closeBooking() {
   }, 10);
 }
 
+function getLocalDateKey(date) {
+  var year = date.getFullYear();
+  var month = String(date.getMonth() + 1).padStart(2, '0');
+  var day = String(date.getDate()).padStart(2, '0');
+  return year + '-' + month + '-' + day;
+}
+
+function getBookingDayOptions() {
+  var start = new Date();
+  start.setHours(0, 0, 0, 0);
+
+  return [0, 1, 2].map(function(offset) {
+    var date = new Date(start);
+    date.setDate(start.getDate() + offset);
+
+    var label = offset === 0 ? 'Hoy' : offset === 1 ? 'Mañana' : 'Pasado mañana';
+    var short = new Intl.DateTimeFormat('es-ES', { day: 'numeric', month: 'short' }).format(date);
+
+    return {
+      value: getLocalDateKey(date),
+      label: label,
+      short: short
+    };
+  });
+}
+
+function getBookingTimeOptions() {
+  var options = [];
+
+  for (var hour = 8; hour <= 20; hour++) {
+    var value = String(hour).padStart(2, '0') + ':00';
+    var suffix = hour >= 12 ? 'p. m.' : 'a. m.';
+    var displayHour = hour % 12 === 0 ? 12 : hour % 12;
+
+    options.push({
+      value: value,
+      label: displayHour + ':00 ' + suffix
+    });
+  }
+
+  return options;
+}
+
+function formatBookingDateDisplay(dateValue) {
+  var option = getBookingDayOptions().find(function(day) {
+    return day.value === dateValue;
+  });
+
+  return option ? option.label + ' · ' + option.short : dateValue;
+}
+
+function formatBookingTimeDisplay(timeValue) {
+  var hourValue = Number(timeValue.split(':')[0]);
+  var suffix = hourValue >= 12 ? 'p. m.' : 'a. m.';
+  var displayHour = hourValue % 12 === 0 ? 12 : hourValue % 12;
+  return displayHour + ':00 ' + suffix;
+}
+
 function renderBooking() {
   if (!bookingBack || !bookingProgress || !bookingContent) return;
 
@@ -375,14 +433,26 @@ function renderBooking() {
   if (booking.step === 1) bookingContent.innerHTML =
     '<div class="booking-step"><h3>¿Presentas dolor o molestia actualmente?</h3><button class="booking-choice" data-reason="Chequeo preventivo / Rutina"><strong>Chequeo preventivo / Rutina</strong><small>Sin dolor ni molestia actual</small></button><button class="booking-choice" data-reason="Sensibilidad o molestia leve"><strong>Sensibilidad o molestia leve</strong><small>Al frío, calor o masticar</small></button><button class="booking-choice" data-reason="Dolor agudo / Molestia evidente"><strong>Dolor agudo / Molestia evidente</strong><small>Atención prioritaria recomendada</small></button></div><div class="booking-footer"><button id="booking-next" type="button">Continuar →</button></div>';
 
-  if (booking.step === 2) bookingContent.innerHTML =
-    '<div class="booking-step"><h3>Selecciona tu día preferido:</h3><p class="booking-note">Preferencias sujetas a coordinación; no hay calendario conectado.</p><div class="booking-dates"><button class="booking-date" data-date="Hoy"><strong>Hoy</strong><small>19 sep</small></button><button class="booking-date" data-date="Mañana"><strong>Mañana</strong><small>20 sep</small></button><button class="booking-date" data-date="Sábado"><strong>Sáb</strong><small>21 sep</small></button></div><h3 style="margin-top:1.2rem">Horario preferido:</h3><div class="booking-times"><button class="booking-time" data-time="9:00 a. m.">9:00 a. m.</button><button class="booking-time" data-time="10:30 a. m.">10:30 a. m.</button><button class="booking-time" data-time="11:30 a. m.">11:30 a. m.</button><button class="booking-time" data-time="3:00 p. m.">3:00 p. m.</button><button class="booking-time" data-time="4:30 p. m.">4:30 p. m.</button><button class="booking-time" data-time="6:00 p. m.">6:00 p. m.</button></div></div><div class="booking-footer"><button id="booking-next" type="button">Continuar →</button></div>';
+  if (booking.step === 2) {
+    var bookingDays = getBookingDayOptions();
+    var bookingDayButtons = bookingDays.map(function(day) {
+      return '<button class="booking-date" data-date="' + day.value + '"><strong>' + day.label + '</strong><small>' + day.short + '</small></button>';
+    }).join('');
+
+    var bookingTimes = getBookingTimeOptions();
+    var bookingTimeButtons = bookingTimes.map(function(timeItem) {
+      return '<button class="booking-time" data-time="' + timeItem.value + '">' + timeItem.label + '</button>';
+    }).join('');
+
+    bookingContent.innerHTML =
+      '<div class="booking-step"><h3>Selecciona tu día preferido:</h3><p class="booking-note">Preferencias sujetas a coordinación; no hay calendario conectado.</p><div class="booking-dates">' + bookingDayButtons + '</div><h3 style="margin-top:1.2rem">Horario preferido:</h3><div class="booking-times">' + bookingTimeButtons + '</div></div><div class="booking-footer"><button id="booking-next" type="button">Continuar →</button></div>';
+  }
 
   if (booking.step === 3) bookingContent.innerHTML =
     '<div class="booking-step"><h3>Tus datos para coordinar la cita:</h3><label class="booking-field">Nombre completo del paciente: *<input id="booking-name" required placeholder="Ej. Tu nombre completo"></label><label class="booking-field">Teléfono / WhatsApp: *<input id="booking-phone" required placeholder="Ej. +51 987 654 321"></label><label class="booking-field">Notas adicionales (opcional):<textarea id="booking-notes" placeholder="Cuéntanos algo que debamos considerar..."></textarea></label><p id="booking-error" class="booking-error" role="alert"></p></div><div class="booking-footer"><button id="booking-next" type="button">Continuar →</button></div>';
 
   if (booking.step === 4) bookingContent.innerHTML =
-    '<div class="booking-step"><h3>Revisa tu solicitud</h3><div class="booking-summary"><strong>Motivo:</strong> '+booking.reason+'<br><strong>Día:</strong> '+booking.date+'<br><strong>Horario:</strong> '+booking.time+'<br><strong>Nombre:</strong> '+booking.name+'<br><strong>Teléfono:</strong> '+booking.phone+'<br><strong>Notas:</strong> '+(booking.notes || 'Sin notas')+'</div><p class="booking-note" style="margin-top:1rem">Esto es una solicitud de coordinación, no una cita confirmada.</p></div><div class="booking-footer"><button id="booking-next" type="button">Confirmar y preparar WhatsApp →</button></div>';
+    '<div class="booking-step"><h3>Revisa tu solicitud</h3><div class="booking-summary"><strong>Motivo:</strong> '+booking.reason+'<br><strong>Día:</strong> '+formatBookingDateDisplay(booking.date)+'<br><strong>Horario:</strong> '+formatBookingTimeDisplay(booking.time)+'<br><strong>Nombre:</strong> '+booking.name+'<br><strong>Teléfono:</strong> '+booking.phone+'<br><strong>Notas:</strong> '+(booking.notes || 'Sin notas')+'</div><p class="booking-note" style="margin-top:1rem">Esto es una solicitud de coordinación, no una cita confirmada.</p></div><div class="booking-footer"><button id="booking-next" type="button">Confirmar y preparar WhatsApp →</button></div>';
 
   if (booking.step === 5) bookingContent.innerHTML =
     '<div class="booking-success"><h3>Solicitud preparada</h3><p>WhatsApp se abrió con tu solicitud. El equipo de Dentomeri coordinará contigo la disponibilidad.</p><button id="booking-finish" class="booking-footer" type="button">Volver a la web</button></div>';
@@ -419,12 +489,13 @@ function renderBooking() {
       }
       if (booking.step === 4) {
         var msg =
-          'Solicitud de cita odontológica%0AMotivo: ' + encodeURIComponent(booking.reason) +
-          '%0AFecha preferida: ' + encodeURIComponent(booking.date) +
-          '%0AHora preferida: ' + encodeURIComponent(booking.time) +
-          '%0ANombre: ' + encodeURIComponent(booking.name) +
-          '%0ATeléfono: ' + encodeURIComponent(booking.phone) +
-          '%0ANotas: ' + encodeURIComponent(booking.notes || 'Sin notas');
+          'Hola Dentomeri, vengo de tu página web y quiero agendar una cita.%0A*Motivo*: ' + encodeURIComponent(booking.reason) +
+          '%0A*Fecha preferida*: ' + encodeURIComponent(formatBookingDateDisplay(booking.date)) +
+          '%0A*Hora preferida*: ' + encodeURIComponent(formatBookingTimeDisplay(booking.time)) +
+          '%0A*Nombre*: ' + encodeURIComponent(booking.name) +
+          '%0A*Teléfono*: ' + encodeURIComponent(booking.phone) +
+          '%0A*Notas*: ' + encodeURIComponent(booking.notes || 'Sin notas')+
+          '%0AQuedo pendiente a tu confirmación, ¡gracias!';
 
         window.open('https://wa.me/51969744485?text=' + msg, '_blank');
         booking.step = 5;
